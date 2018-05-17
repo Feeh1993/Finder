@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffa726</color>
+    <color name="colorPrimaryDark">#f9a825</color>
+    <color name="colorAccent">#FBC02D</color>
+    <color name="tabTitle">#ffffff</color>
+    <color name="tabTitle_selected">#FFFDE7</color>
+    <color name="fundo">#FFCC80</color>
+    <color name="colorgray">#FFCC80</color>
+    <color name="swipebg">#cc3333</color>
+
+    <color name="tabBackground">#ffa726</color>
+    <color name="tabBackground_selected">#ffb74d</color>
+</resources>

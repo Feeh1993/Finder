@@ -1,0 +1,153 @@
+<resources>
+    <string name="app_name">Finder</string>
+    <string name="title_activity_local">Map</string>
+    <string name="place_details">
+    <![CDATA[
+        <b>%1$s</b>
+        <br/>
+        <i>Place Id: %2$s</i>
+        <br/>
+        Address: %3$s
+        <br/>
+        Phone: %4$s
+        <br/>
+        Website: %5$s
+          <br/>
+        lat: %6$s
+          <br/>
+        lng: %7$s
+    ]]>
+    </string>
+    <string-array name="categoria_array">
+        <item>Games</item>
+        <item>Brinquedos</item>
+        <item>Colecionavéis</item>
+        <item>Esporte e Lazer</item>
+        <item>Arte e Antiguidade</item>
+        <item>Instrumentos Musicais</item>
+        <item>Fotografia</item>
+        <item>Assinaturas e Revistas</item>
+        <item>Artigos Religiosos</item>
+        <item>Bebês e Cia</item>
+        <item>Casa e Decoração</item>
+        <item>Construção e Ferramentas</item>
+        <item>Eletrodomésticos</item>
+        <item>Pet Shop</item>
+        <item>Livros</item>
+        <item>CDs</item>
+        <item>DVDs</item>
+        <item>Blu-Ray</item>
+        <item>Filme Digital</item>
+        <item>HD-DVD</item>
+        <item>Discos de Vinil</item>
+        <item>Música Digital</item>
+        <item>VHS</item>
+        <item>Fitas K7 Gravadas</item>
+        <item>Moda e Acessórios</item>
+        <item>Perfumaria e Cosméticos</item>
+        <item>Saúde</item>
+        <item>Jóias e Relógios</item>
+        <item>Sex Shop</item>
+        <item>Alimentos e Bebidas</item>
+        <item>Indústria,Comércio e Negócios</item>
+        <item>Automóveis e Veículos</item>
+        <item>Informática</item>
+        <item>Eletrônicos</item>
+        <item>Telefonia</item>
+    </string-array>
+    <string name="termos_uso_titulo">TERMOS E CONDIÇÕES GERAIS DE USO DO APLICATIVO FINDER </string>
+    <string name="termos_uso_conteudo">
+           Estes termos e condições gerais de uso aplicam-se aos serviços prestados pela pessoa jurídica FAMWM Ltda, devamente registrada sob o CNPJ n.   99.999.9999999-99, com sede em:
+Avenida Paulista, 210 Éden Sorocaba, SP CEP: 18087-101
+por meio do aplicativo Finder.
+  1. DO OBJETO
+O aplicativo Finder caracteriza-se pela prestação dos seguintes serviços:
+-Disponibilização de ferramenta de busca para localização de produtos em promoção em uma localização próxima ao usuário.
+-Apresentação de rotas.
+-Lista de interesses
+  2. DA ACEITAÇÃO DOS TERMOS E CONDIÇÕES GERAIS DE USO
+Todos aqueles que desejarem ter acesso aos serviços ofertados através do aplicativo Finder deverão, primeiramente, se informar sobre as regras que compõem o presente instrumento, as quais ficarão disponíveis para pronta e ampla consulta, em link direto no próprio aplicativo.
+Ao utilizar o aplicativo Finder, o usuário aceita integralmente as presentes normas e compromete-se a observá-las, sob risco de aplicação das penalades cabíveis. Antes de iniciar qualquer navegação no aplicativo, o usuário deverá cientificar-se de eventuais modificações ou atualizações ocorras neste termos.
+Caso não concorde com quaisquer das regras aqui descritas, o usuário deve, imediatamente, abster-se de utilizar o serviço. Se for de seu interesse, poderá, ainda, entrar em contato com o serviço de atendimento ao cliente, para apresentar-lhe as suas ressalvas.
+  3. DA NAVEGAÇÃO
+O editor do aplicativo Finder se compromete a utilizar todas as soluções técnicas à sua disposição para permitir o acesso ao serviço 24 (vinte e quatro) horas por dia, 7 (sete) dias por semana. Entretanto, ele poderá, a qualquer momento, interromper, limitar ou suspender o acesso ao aplicativo ou a algumas de suas páginas, a fim de realizar atualizações, modificações de conteúdo ou qualquer outra ação julgada necessária para o seu bom funcionamento.
+Os presentes termos e condições gerais de uso  se aplicam a todas as extensões do aplicativo Finder em redes sociais ou em comunades, tanto as já existentes, quanto aquelas ainda a serem implementadas.
+  4. DA GESTÃO DO APLICATIVO
+Para a boa gestão, o editor do aplicativo Finder poderá, a qualquer momento:
+ a) suspender, interromper ou limitar o acesso a todo ou a parte do aplicativo a uma categoriaMod específica de internautas;
+ b) remover toda informação que possa perturbar o funcionamento do aplicativo ou que esteja em conflito com normas de Direito brasileiro ou de Direito internacional;
+ c) suspender o aplicativo, a fim de realizar atualizações e modificações.
+  5. DO CADASTRO
+Os serviços disponibilizados no aplicativo Finder apenas poderão ser acessados por pessoas plenamente capazes, conforme o Direito brasileiro. Todos aqueles que não possuírem plena capacade civil - menores de 18 anos não emancipados, pródigos, ébrios habituais ou viciados em tóxicos e pessoas que não puderem exprimir sua vontade, por motivo transitório ou permanente - deverão ser devamente assistos por seus representantes legais, que se responsabilizarão pelo cumprimento das presentes regras.
+Ao usuário, será permito manter apenas uma conta junto ao aplicativo Finder. Contas duplicadas serão automaticamente desativadas pelo editor do aplicativo, sem prejuízo de demais penalades cabíveis.
+Para o devo cadastramento junto ao serviço, o usuário deverá fornecer integralmente os dados requeros. Todas as informações fornecas pelo usuário devem ser precisas, verdadeiras e atualizadas. Em qualquer caso, o usuário responderá, em âmbito cível e criminal, pela veracade, exatão e autenticade dos dados informados.
+O usuário deverá fornecer um endereço de e-mail válo, através do qual o aplicativo realizará todos os contatos necessários. Todas as comunicações enviadas para o refero endereço serão conseradas las pelo usuário, que se compromete, assim, a consultar regularmente suas mensagens recebas e a respondê-las em prazo razoável.
+Após a confirmação de seu cadastro, o usuário possuirá um login (apelo) e uma senha pessoais, que deverão ser por ele utilizados para o acesso a sua conta no aplicativo Finder. Estes dados de conexão não poderão ser informados pelo usuário a terceiros, sendo de sua inteira responsabilade o uso que deles seja feito. O usuário compromete-se a comunicar imediatamente ao editor do aplicativo quaisquer ativades suspeitas ou inesperadas em sua conta.
+Não será permito ceder, vender, alugar ou transferir, de qualquer forma, a conta.
+Será automaticamente descadastrado o usuário que descumprir quaisquer das normas contas no presente instrumento, sendo-lhe vedado realizar nova inscrição no aplicativo.
+O usuário poderá, a qualquer tempo e sem necessade de justificação, requerer o cancelamento de seu cadastro junto ao aplicativo Finder. O seu descadastramento será realizado o mais rapamente possível, desde que não sejam verificados débitos em aberto.
+  6. DAS RESPONSABILADES
+O editor se responsabilizará pelos defeitos ou vícios encontrados nos serviços prestados pelo aplicativo Finder, desde que tenha lhes dado causa. Defeitos ou vícios técnicos ou operacionais originados no próprio sistema do usuário não serão de responsabilade do editor.
+O editor responsabiliza-se apenas pelas informações que foram por ele diretamente divulgadas. Quaisquer informações incluídas pelos usuários, tais como em comentários e em perfis pessoais, serão de inteira responsabilade dos próprios.
+O usuário é responsável, ainda:
+ a) pela correta utilização do aplicativo e de seus serviços, prezando pela boa convivência, pelo respeito e pela cordialade no relacionamento com os demais usuários;
+ b) pelo cumprimento das regras contas neste instrumento, bem como normas de Direito nacional e de Direito internacional;
+ c) pela proteção dos dados de acesso à sua conta (login e senha).
+O editor não será responsável:
+ a) pelas características intrínsecas da internet, principalmente relativas à confiabilade e à procedência das informações circulando nesta rede;
+ b) pelos conteúdos ou ativades ilícitas praticadas através de seu aplicativo.
+  . DOS LINKS EXTERNOS
+O aplicativo Finder pode conter links externos redirigindo o usuário para outras páginas da internet, sobre os quais o editor não exerce controle. Apesar das verificações prévias e regulares realizadas pelo editor, ele se isenta de qualquer responsabilade sobre o conteúdo encontrado nestes sites e serviços.
+Poderão ser incluídos links nas páginas e nos documentos do aplicativo Finder, desde que não sirvam para fins comerciais ou publicitários. Esta inclusão dependerá de autorização prévia do editor.
+Não será autorizada a inclusão de páginas que divulguem quaisquer tipos de informações ilícitas, violentas, polêmicas, pornográficas, xenofóbicas, discriminatórias ou ofensivas.
+  8. DOS DIREITOS AUTORAIS
+A estrutura do aplicativo Finder, bem como os textos, os gráficos, as imagens, as fotografias, os sons, os vídeos e as demais aplicações informáticas que o compõem são de propriedade do editor e são protegas pela legislação brasileira e internacional referente à propriedade intelectual.
+Qualquer representação, reprodução, adaptação ou exploração parcial ou total dos conteúdos, marcas e serviços propostos pelo aplicativo, por qualquer meio que seja, sem autorização prévia, expressa e escrita do editor, é estritamente vedada, podendo-se recorrer às medas cíveis e penais cabíveis. Estão excluídos desta previsão apenas os elementos que estejam expressamente designados no aplicativo como livres de direitos autorais.
+O acesso não gera para o usuário qualquer direito de propriedade intelectual relativo a elementos do aplicativo, os quais restam sob a propriedade exclusiva do editor.
+É vedado ao usuário incluir no aplicativo dados que possam modificar o seu conteúdo ou sua aparência.
+  9. DA POLÍTICA DE PRIVACADE
+1. Dados pessoais
+Todos os dados pessoais fornecos pelo usuário no momento de seu cadastro ou que venham a ser solicitados posteriormente, a este título, permanecerão sigilosos e não serão repassados a quaisquer parceiros do aplicativo.
+O editor apenas poderá transmitir os dados pessoais a terceiros quando o usuário permiti-lo expressamente ou quando presentes as hipóteses legais previstas no Direito brasileiro, tais como a requisição judicial.
+É de responsabilade do editor a garantia de confencialade dos dados pessoais fornecos pelos usuários, devendo proteger o aplicativo contra tentativas de violações ou acessos clandestinos à sua base de dados.
+2. Dados de navegação
+O aplicativo recorre eventualmente às técnicas de cookies, que lhe permitem analisar as estatísticas e as informações sobre a navegação do usuário. Podem ser fornecos, por exemplo, dados sobre o dispositivo utilizado pelo usuário e o seu local de acesso. Esta coleta de informações busca melhorar a navegação, para o conforto do usuário, ao permitir apresentar-lhe serviços personalizados, de acordo com suas preferências.
+Estes dados de navegação poderão, ainda, ser compartilhados com eventuais parceiros do aplicativo, buscando o aprimoramento dos produtos e serviços ofertados ao usuário.
+O usuário poderá se opor ao registro de cookies pelo aplicativo, bastando desativar esta opção no seu próprio navegador ou aparelho. Por outro lado, a desativação deste registro poderá afetar a disponibilade de algumas ferramentas e alguns serviços do aplicativo.
+
+  10. DO SERVIÇO DE ATENDIMENTO AO USUÁRIO
+Em caso de dúvas, sugestões ou problemas com a utilização do aplicativo Finder, o usuário poderá contatar diretamente o seu serviço de atendimento, através do endereço de e-mail: suporte@finder.com.br, bem como do telefone: (15) 3231-3029.
+Estes serviços de atendimento ao usuário estarão disponíveis nos seguintes dias e horários: Segunda a sexta das 08h ás 18h.
+O usuário poderá, ainda, optar por enviar correspondência ao endereço da sede do aplicativo Finder, informado no início deste documento.
+  11. DAS SANÇÕES
+Sem prejuízo das demais medas legais cabíveis, o editor do aplicativo Finder poderá, a qualquer momento, advertir, suspender ou cancelar a conta do usuário:
+ a) que descumprir quaisquer dos dispositivos contos no presente instrumento;
+ b) que descumprir os seus deveres de usuário;
+ c) que praticar atos fraudulentos ou dolosos;
+ d) cujo comportamento constitua ou possa vir a importar ofensa ou dano a terceiro ou ao próprio aplicativo.
+  12. DAS ALTERAÇÕES
+A presente versão dos termos e condições gerais de uso foi atualizada pela última vez 08/08/2017.
+O editor se reserva o direito de modificar, a qualquer momento e sem qualquer aviso prévio, o aplicativo e os serviços, bem como as presentes normas, especialmente para adaptá-las às evoluções do aplicativo Finder, seja pela disponibilização de novas funcionalades, seja pela supressão ou modificação daquelas já existentes.
+Pedir, imediatamente, o cancelamento de sua conta e apresentar a sua ressalva ao serviço de atendimento, se assim o desejar.
+  13. DO DIREITO APLICÁVEL E DO FORO
+Para a solução das controvérsias decorrentes do presente instrumento, será aplicado integralmente o Direito brasileiro.
+Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede do editor do aplicativo.
+
+Seja bem-vindo(a)!
+A equipe do aplicativo Finder lhe deseja uma excelente navegação!
+
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="my_cart">My Cart</string>
+    <string name="delete">DELETE</string>
+
+</resources>

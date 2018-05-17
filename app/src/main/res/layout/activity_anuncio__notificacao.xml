@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fernandosilveira.promotions.Activity.Consumidor.Anuncio_Notificacao"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/prgCarregarAnunc_notf"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txtajudaAnunc_not"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Problemas com conexão ?"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnCarregarAnunc_not"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            android:text="Carregar novamente"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgProd_Anuncio"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@mipmap/ic_launcher_logo_finder" />
+
+        <TextView
+            android:id="@+id/txtEmpresa_Anuncio"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Empresa"
+            android:textAlignment="textStart"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/txtProduto_Anuncio"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Produto"
+            android:textAlignment="textStart"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtDescricao_Anuncio"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Descrição Produto"
+            android:textAlignment="viewStart"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtValidade_Anuncio"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Validade"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtPreco_Anuncio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carregando Preço.."
+                android:textColor="@android:color/holo_green_light"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.51"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.sackcentury.shinebuttonlib.ShineButton
+                android:id="@+id/shbtnfavorito"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="8dp"
+                android:src="@android:color/darker_gray"
+                android:visibility="gone"
+                app:allow_random_color="true"
+                app:btn_color="@android:color/darker_gray"
+                app:btn_fill_color="@color/tabBackground_selected"
+                app:layout_constraintBottom_toTopOf="@+id/logo_loading"
+                app:layout_constraintTop_toTopOf="parent"
+                app:siShape="@raw/heart" />
+
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:id="@+id/rtbAnuncio"
+                style="@style/Widget.MaterialRatingBar.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtclassificarprod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rtbAnuncio"
+                android:text="Classifique este produto"
+                android:textAlignment="viewStart"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

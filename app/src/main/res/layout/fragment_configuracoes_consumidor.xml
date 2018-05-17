@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_weight="0" />
+
+        <TextView
+            android:id="@+id/txtEmail_config_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:text="Recuperando dados da conta ..."
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.GridLayout
+            android:id="@+id/choice_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:padding="4dp"
+            app:alignmentMode="alignBounds"
+            app:columnCount="2"
+            app:rowOrderPreserved="false"
+            app:useDefaultMargins="true">
+
+            <Button
+                android:id="@+id/btnMinhaConta_Usuario"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:background="@null"
+                android:drawableTop="@drawable/img_minhaconta"
+                android:gravity="center"
+                android:text="Minha conta"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal" />
+
+            <Button
+                android:id="@+id/btnAlterarSenha_Usuario"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:background="@null"
+                android:drawableTop="@mipmap/img_senha"
+                android:gravity="center"
+                android:text="Alterar senha"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal" />
+
+            <Button
+                android:id="@+id/btnFaleConosco_Usuario"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:background="@null"
+                android:drawableTop="@drawable/img_faleconosco"
+                android:gravity="center"
+                android:text="Fale conosco"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal" />
+
+            <Button
+                android:id="@+id/btnTermos_Conf_Usuario"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:background="@null"
+                android:drawableTop="@drawable/img_termos"
+                android:gravity="center"
+                android:text="Termos de uso"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal" />
+        </android.support.v7.widget.GridLayout>
+    </LinearLayout>
+</LinearLayout>

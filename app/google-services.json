@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "558106738163",
+    "firebase_url": "https://banco-de-dados-tcc.firebaseio.com",
+    "project_id": "banco-de-dados-tcc",
+    "storage_bucket": "banco-de-dados-tcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558106738163:android:3979042b05415de6",
+        "android_client_info": {
+          "package_name": "com.example.fernandosilveira.promotions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558106738163-sk44dgt3ontoh1k970miq69j6huq0usq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fernandosilveira.promotions",
+            "certificate_hash": "61fe840f17768cd585caf946bbda37dbd934818d"
+          }
+        },
+        {
+          "client_id": "558106738163-1rnf1qf8g90vbvsqkgoqh5doca3ba9qf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7Qo_DR5J_rRVHZuSPRqNHSaotBBOiq3M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558106738163-1rnf1qf8g90vbvsqkgoqh5doca3ba9qf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
