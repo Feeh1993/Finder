@@ -26,29 +26,48 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.nineoldandroids:library:2.4.0'
+
+    // biblioteca para efeitos
     compile 'me.zhanghai.android.materialratingbar:library:1.0.2'
+
+    // biblioteca para layout principal
     compile 'com.flyco.roundview:FlycoRoundView_Lib:1.1.2@aar'
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:1.5.0@aar'
+
+    //estilos de botões
     compile 'com.sackcentury:shinebutton:0.1.9'
+
+    //biblioteca que cria telas de ajuda personalizadas
     compile 'com.github.chyrta:AndroidOnboarder:0.7'
+
+    //biblioteca google maps
     compile 'com.google.android.gms:play-services-maps:11.0.2'
     compile 'com.google.android.gms:play-services:11.0.2'
     compile 'com.google.android.gms:play-services-location:11.0.2'
+
+    //Biblioteca para download de imagens
     compile 'com.github.bumptech.glide:glide:4.0.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
+
+    //biblioteca que cria um dialogfragment para coleta de foto
     compile 'com.github.jrvansuita:PickImage:+'
+
+    //bibliotecas firebase
     compile 'com.firebaseui:firebase-ui-database:1.2.0'
     compile 'com.firebaseui:firebase-ui-storage:0.6.0'
     compile 'com.google.firebase:firebase-auth:10.0.1'
     compile 'com.google.firebase:firebase-database:10.0.1'
     compile 'com.google.firebase:firebase-storage:10.0.1'
+
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:cardview-v7:25.3.1'
     compile 'com.android.support:gridlayout-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
-    compile 'com.facebook.shimmer:shimmer:0.1.0@aar'
+
+    // progress bar personalizado
+    compile 'com.wang.avi:library:2.1.3'
 
     //botões arredondados
     compile 'com.lai:buttonStyle:1.0.2'

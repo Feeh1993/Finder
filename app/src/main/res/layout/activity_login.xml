@@ -1,114 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/tabBackground_selected"
-    android:orientation="vertical"
-    android:scrollbarAlwaysDrawVerticalTrack="true">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/logo2"
+tools:context=".Activity.Geral.Login">
 
-    <ProgressBar
-        android:id="@+id/progressBarMain"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_margin="8dp"
-        android:background="@drawable/progresscolor"
-        android:visibility="invisible" />
+<android.support.v7.widget.CardView
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    android:layout_centerInParent="true"
+    android:id="@+id/cv">
 
-
-    <ImageButton
-        android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_above="@+id/relativeLayout"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@null"
-        android:elevation="5dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/logo1" />
-
-    <RelativeLayout
-        android:id="@+id/relative"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/txtvTermos"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="#fff"
-        android:elevation="4dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="20dp">
+        >
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:background="@color/tabBackground_selected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:text="Login"
+                android:textColor="@color/tabBackground_selected"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="30dp">
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingEnd="30dp"
+            android:paddingStart="50dp">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="#c5c5c5">
 
                 <EditText
                     android:id="@+id/edtEmailLogin"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableTint="#FF4081"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:singleLine="true" />
+                    android:background="@drawable/selector_bg_edit"
+                    android:hint="email"
+                    android:inputType="textPersonName"
+                    android:paddingBottom="2dp"
+                    android:textColor="@color/tabBackground_selected"
+                    android:textColorHint="@color/tabBackground_selected"
+                    android:textCursorDrawable="@drawable/bg_input_cursor"
+                    android:textSize="13sp" />
             </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:paddingEnd="30dp"
+            android:paddingStart="50dp">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="#c5c5c5">
 
                 <EditText
                     android:id="@+id/edtSenhaLogin"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:drawableTint="#FF4081"
-                    android:hint="Senha"
+                    android:background="@drawable/selector_bg_edit"
+                    android:hint="senha"
                     android:inputType="textPassword"
-                    android:singleLine="true" />
+                    android:paddingBottom="2dp"
+                    android:textColor="@color/tabBackground_selected"
+                    android:textColorHint="@color/tabBackground_selected"
+                    android:textCursorDrawable="@drawable/bg_input_cursor"
+                    android:textSize="13sp" />
             </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp">
 
             <TextView
-                android:id="@+id/txtEsqueceuSenha"
+                android:id="@+id/txtSemCadastro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avi"
+                style="@style/AVLoadingIndicatorView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:paddingTop="5dp"
-                android:text="Esqueceu a senha?" />
+                android:layout_marginEnd="100dp"
+                android:layout_marginStart="100dp"
+                android:visibility="invisible"
+                app:indicatorColor="@color/tabBackground"
+                app:indicatorName="BallPulseIndicator" />
+        </LinearLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/btnLogin"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="22dp"
-                android:background="@color/tabBackground_selected"
-                android:text="Login"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="18sp" />
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bt_shape"
+                android:stateListAnimator="@drawable/state_list_animator_z"
+                android:text="Entrar"
+                android:textColor="@color/tabBackground_selected"></Button>
+        </RelativeLayout>
 
-            <Button
-                android:id="@+id/btnCriarConta"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="22dp"
-                android:background="@color/tabBackground_selected"
-                android:text="Criar conta"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="18sp" />
-        </LinearLayout>
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/txtEsqueceuSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="Esqueceu a senha?"
+            android:textColor="@color/tabBackground_selected"
+            android:textSize="12sp" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/cv"
+        android:layout_alignTop="@id/cv"
+        android:layout_marginEnd="-20dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/plus"
+        android:transitionName="loginFab"
+        app:backgroundTint="@color/tabBackground_selected"
+        app:fabSize="normal" />
 
     <TextView
         android:id="@+id/txtvTermos"
@@ -133,5 +185,6 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/tabTitle" />
+
 
 </RelativeLayout>

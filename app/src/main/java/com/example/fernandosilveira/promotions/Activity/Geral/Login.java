@@ -1,13 +1,18 @@
 package com.example.fernandosilveira.promotions.Activity.Geral;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +21,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fernandosilveira.promotions.Activity.Anunciante.CriarContaAnunciante;
 import com.example.fernandosilveira.promotions.Config.ConfiguracaoFirebase;
 import com.example.fernandosilveira.promotions.Helper.PermissionsUtils;
 import com.example.fernandosilveira.promotions.Model.Consumidor;
@@ -24,15 +30,17 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.wang.avi.AVLoadingIndicatorView;
 
 public class Login extends Activity
 {
     private Consumidor consumidor;
     private FirebaseAuth autenticacao;
-    private ProgressBar progressBar;
-    private TextView esqueceusenha,Termosuso;
+    private AVLoadingIndicatorView progressBar;
+    private TextView esqueceusenha,Termosuso,semcadastro;
     private Button btnLogin,btnCriarConta;
     private EditText edtEmailLogin, edtSenhaLogin;
+    private FloatingActionButton fab;
     String[] permissoes = new String[]
             {
                     Manifest.permission.ACCESS_FINE_LOCATION,
@@ -48,15 +56,29 @@ public class Login extends Activity
         setContentView(R.layout.activity_login);
         edtEmailLogin = (EditText) findViewById(R.id.edtEmailLogin);
         edtSenhaLogin = (EditText) findViewById(R.id.edtSenhaLogin);
-        progressBar = (ProgressBar) findViewById(R.id.progressBarMain);
         esqueceusenha = (TextView) findViewById(R.id.txtEsqueceuSenha);
-        btnCriarConta = (Button) findViewById(R.id.btnCriarConta);
+        semcadastro = (TextView) findViewById(R.id.txtSemCadastro);
         btnLogin = (Button) findViewById(R.id.btnLogin);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         Termosuso = (TextView) findViewById(R.id.txtTermosdeUso);
-
+        progressBar = (AVLoadingIndicatorView) findViewById(R.id.avi);
 
         PermissionsUtils.ActivePermissions(this,permissoes,1);
 
+
+        fab.setOnClickListener(new View.OnClickListener()
+        {
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(View view)
+            {
+                getWindow().setExitTransition(null);
+                getWindow().setEnterTransition(null);
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login.this, fab, fab.getTransitionName());
+                startActivity(new Intent(Login.this, EscolhaCadastro.class), options.toBundle());
+            }
+        });
         esqueceusenha.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -86,24 +108,16 @@ public class Login extends Activity
                     edtSenhaLogin.setError("Digite sua Senha!");
                     return;
                 }
-                progressBar.setVisibility(View.VISIBLE);
+//                progressBar.setVisibility(View.VISIBLE);
+                startAnim();
                 consumidor = new Consumidor();
                 consumidor.setEmail( edtEmailLogin.getText().toString() );
                 consumidor.setSenha( edtSenhaLogin.getText().toString() );
                 validarLogin();
             }
         });
-        btnCriarConta.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(Login.this, EscolhaCadastro.class);
-                startActivity( intent );
-                overridePendingTransition(R.anim.anim_fadein, R.anim.anim_fadeout);
-            }
-        });
-       Termosuso.setOnClickListener(new View.OnClickListener() {
+
+        Termosuso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, TermosUso.class);
@@ -159,10 +173,11 @@ public class Login extends Activity
                 }else
                     {
                        // Toast.makeText(Login.this, "Erro ao fazer login,verifique seu email e senha e tente novamente", Toast.LENGTH_LONG ).show();
-                        edtEmailLogin.setError("Erro ao fazer login,verifique seu email!");
-                        edtSenhaLogin.setError("Erro ao fazer login,verifique sua senha e tente novamente!");
-                        progressBar.setVisibility(View.GONE);
+                        semcadastro.setText("Erro ao fazer login,verifique seu email e senha !");
+  //                      progressBar.setVisibility(View.GONE);
+                        stopAnim();
                     }
+
             }
         });
     }
@@ -194,5 +209,19 @@ public class Login extends Activity
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+    void startAnim()
+    {
+        progressBar.setVisibility(View.VISIBLE);
+        progressBar.show();
+        // or avi.smoothToShow();
+    }
+
+    void stopAnim()
+    {
+        progressBar.setVisibility(View.INVISIBLE);
+        progressBar.hide();
+        // or avi.smoothToHide();
+    }
+
 }
 

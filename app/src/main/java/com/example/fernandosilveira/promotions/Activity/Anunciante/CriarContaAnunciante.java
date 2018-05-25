@@ -1,18 +1,32 @@
 package com.example.fernandosilveira.promotions.Activity.Anunciante;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.View;
+import android.view.ViewAnimationUtils;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fernandosilveira.promotions.Activity.Geral.EscolhaCadastro;
+import com.example.fernandosilveira.promotions.Activity.Geral.Login;
 import com.example.fernandosilveira.promotions.Activity.Geral.TermosUso;
 import com.example.fernandosilveira.promotions.Activity.Validacao.TelefoneValidar;
 import com.example.fernandosilveira.promotions.Activity.Validacao.ValidarCnpj;
@@ -28,6 +42,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.lang.ref.WeakReference;
 
@@ -37,11 +52,15 @@ public class CriarContaAnunciante extends Activity
     private Button btnCriarContaAnunc;
     private TextView TermosdeUso;
     private FirebaseAuth autenticacao;
-    private ProgressBar progressBar;
+  //  private ProgressBar progressBar;
     private Anunciante_Mod anuncianteMod;
     private CategoriaProd categoriaProd;
     private ValidarCnpj validarCnpj;
     private TextWatcher cnpjMask;
+    private FloatingActionButton fab;
+    private AVLoadingIndicatorView progressBar;
+    private CardView cvAdd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -52,9 +71,21 @@ public class CriarContaAnunciante extends Activity
         edtCnpj = (EditText) findViewById(R.id.edtCnpjCA);
         edtNomeAnunc = (EditText) findViewById(R.id.edtNomeCA);
         edtSenhaAnunc = (EditText) findViewById(R.id.edtSenhaCA);
-        progressBar = (ProgressBar) findViewById(R.id.progressBarCA);
+      //  progressBar = (ProgressBar) findViewById(R.id.progressBarCA);
         TermosdeUso = (TextView) findViewById(R.id.txtTermosdeUso);
         btnCriarContaAnunc = (Button) findViewById(R.id.btnCCAnunciante);
+        cvAdd =(CardView) findViewById(R.id.cv_add);
+        fab = (FloatingActionButton) findViewById(R.id.fabCA);
+        progressBar = (AVLoadingIndicatorView) findViewById(R.id.avi);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(View v) {
+                animateRevealClose();
+            }
+        });
+
         TermosdeUso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +134,8 @@ public class CriarContaAnunciante extends Activity
                     return;
                 }else
                 {
-                    progressBar.setVisibility(View.VISIBLE);
+                 //   progressBar.setVisibility(View.VISIBLE);
+                    startAnim();
                     anuncianteMod = new Anunciante_Mod();
                     anuncianteMod.setNome(edtNomeAnunc.getText().toString());
                     anuncianteMod.setEmail(edtEmailAnunc.getText().toString());
@@ -111,7 +143,8 @@ public class CriarContaAnunciante extends Activity
                     anuncianteMod.setCnpj(edtCnpj.getText().toString());
                     anuncianteMod.setTelefone(edtTelefone.getText().toString());
                     cadastrarAnunciante();
-                    progressBar.setVisibility(View.INVISIBLE);
+              //      progressBar.setVisibility(View.INVISIBLE);
+                    stopAnim();
                 }
             }
         });
@@ -160,5 +193,100 @@ public class CriarContaAnunciante extends Activity
         });
 
     }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void ShowEnterAnimation() {
+        Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.fabtransition);
+        getWindow().setSharedElementEnterTransition(transition);
+
+        transition.addListener(new Transition.TransitionListener() {
+            @Override
+            public void onTransitionStart(Transition transition) {
+                cvAdd.setVisibility(View.GONE);
+            }
+
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onTransitionEnd(Transition transition) {
+                transition.removeListener(this);
+                animateRevealShow();
+            }
+
+            @Override
+            public void onTransitionCancel(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionPause(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionResume(Transition transition) {
+
+            }
+
+
+        });
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void animateRevealShow() {
+        Animator mAnimator = ViewAnimationUtils.createCircularReveal(cvAdd, cvAdd.getWidth()/2,0, fab.getWidth() / 2, cvAdd.getHeight());
+        mAnimator.setDuration(500);
+        mAnimator.setInterpolator(new AccelerateInterpolator());
+        mAnimator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                cvAdd.setVisibility(View.VISIBLE);
+                super.onAnimationStart(animation);
+            }
+        });
+        mAnimator.start();
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void animateRevealClose() {
+        Animator mAnimator = ViewAnimationUtils.createCircularReveal(cvAdd,cvAdd.getWidth()/2,0, cvAdd.getHeight(), fab.getWidth() / 2);
+        mAnimator.setDuration(500);
+        mAnimator.setInterpolator(new AccelerateInterpolator());
+        mAnimator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                cvAdd.setVisibility(View.INVISIBLE);
+                super.onAnimationEnd(animation);
+                fab.setImageResource(R.drawable.plus);
+                CriarContaAnunciante.super.onBackPressed();
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+            }
+        });
+        mAnimator.start();
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public void onBackPressed() {
+        animateRevealClose();
+    }
+    void startAnim()
+    {
+        progressBar.setVisibility(View.VISIBLE);
+        progressBar.show();
+        // or avi.smoothToShow();
+    }
+
+    void stopAnim()
+    {
+        progressBar.setVisibility(View.INVISIBLE);
+        progressBar.hide();
+        // or avi.smoothToHide();
+    }
+
 }
 

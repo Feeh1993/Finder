@@ -1,123 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tabBackground_selected"
-    android:orientation="vertical"
-    android:scrollbarAlwaysDrawVerticalTrack="true">
-
-    <ProgressBar
-        android:id="@+id/progressBarCC"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_margin="8dp"
-        android:background="@drawable/progresscolor"
-        android:visibility="invisible" />
-
-
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="#fff"
-        android:elevation="4dp"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:layout_above="@+id/txtvTermos"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18dp"
-        android:id="@+id/relativeLayout">
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="30dp">
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/edtNomeCC"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableTint="#FF4081"
-                    android:hint="Nome"
-                    android:singleLine="true" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/edtEmailCC"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:drawableTint="#FF4081"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:singleLine="true" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/edtSenhaCC"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableTint="#FF4081"
-                    android:hint="Senha"
-                    android:inputType="textPassword"
-                    android:singleLine="true" />
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/edtTelefoneCC"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:drawableTint="#FF4081"
-                    android:hint="Telefone"
-                    android:inputType="phone"
-                    android:singleLine="true" />
-            </android.support.design.widget.TextInputLayout>
-
-            <Button
-                android:id="@+id/btnCriarContaConsumidor"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="22dp"
-                android:background="@color/tabBackground_selected"
-                android:text="Criar conta"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/txtvTermos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ao criar conta você estará concordando com os "
-        android:textAlignment="center"
-        android:textColor="@color/tabTitle"
-        android:textSize="13sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="14dp" />
+    android:background="@drawable/logo2"
+    tools:context=".Activity.Consumidor.CriarContaConsumidor">
 
     <TextView
         android:id="@+id/txtTermosdeUso"
@@ -130,17 +18,203 @@
         android:textAllCaps="false"
         android:textColor="@color/tabTitle" />
 
-    <ImageButton
-        android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@null"
-        android:elevation="5dp"
+    <TextView
+        android:id="@+id/txtvTermos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="14dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/logo1" />
+        android:text="Ao criar conta você estará concordando com os "
+        android:textAlignment="center"
+        android:textColor="#f0f7f4"
+        android:textSize="13sp" />
+
+    <FrameLayout
+        android:layout_width="320dp"
+        android:layout_height="400dp"
+        android:layout_centerInParent="true"
+        android:paddingTop="10dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_add"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/tabTitle"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="50dp"
+                    android:text="Registre-se"
+                    android:textColor="@color/tabBackground"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="30dp"
+                    android:paddingStart="50dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#c5c5c5">
+
+                        <EditText
+                            android:id="@+id/edtNomeCC"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector_bg_edit"
+                            android:hint="nome"
+                            android:inputType="textPersonName"
+                            android:paddingBottom="2dp"
+                            android:textColor="@color/tabBackground_selected"
+                            android:textColorHint="@color/tabBackground_selected"
+                            android:textCursorDrawable="@drawable/bg_input_cursor"
+                            android:textSize="15sp" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    android:paddingEnd="30dp"
+                    android:paddingStart="50dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#c5c5c5">
+
+                        <EditText
+                            android:id="@+id/edtEmailCC"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector_bg_edit"
+                            android:hint="email"
+                            android:inputType="textEmailAddress"
+                            android:paddingBottom="2dp"
+                            android:textColor="@color/tabBackground_selected"
+                            android:textColorHint="@color/tabBackground_selected"
+                            android:textCursorDrawable="@drawable/bg_input_cursor"
+                            android:textSize="15sp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    android:paddingEnd="30dp"
+                    android:paddingStart="50dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#c5c5c5">
+
+                        <EditText
+                            android:id="@+id/edtSenhaCC"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector_bg_edit"
+                            android:hint="senha"
+                            android:inputType="textPassword"
+                            android:paddingBottom="2dp"
+                            android:textColor="@color/tabBackground_selected"
+                            android:textColorHint="@color/tabBackground_selected"
+                            android:textCursorDrawable="@drawable/bg_input_cursor"
+                            android:textSize="15sp" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    android:paddingEnd="30dp"
+                    android:paddingStart="50dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#c5c5c5">
+
+                        <EditText
+                            android:id="@+id/edtTelefoneCC"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector_bg_edit"
+                            android:hint="telefone"
+                            android:inputType="phone"
+                            android:paddingBottom="2dp"
+                            android:textColor="@color/tabBackground_selected"
+                            android:textColorHint="@color/tabBackground_selected"
+                            android:textCursorDrawable="@drawable/bg_input_cursor"
+                            android:textSize="15sp" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnCriarContaConsumidor"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/bordas_laranja"
+                    android:stateListAnimator="@drawable/state_list_animator_z"
+                    android:text="Criar Conta"
+                    android:textColor="@color/tabBackground"></Button>
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_centerInParent="true"
+        android:paddingTop="10dp">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabCC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:src="@drawable/plus_x"
+            app:fabSize="normal" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avi"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="10dp"
+            android:visibility="invisible"
+            app:indicatorColor="@color/tabBackground"
+            app:indicatorName="BallPulseIndicator" />
+
+    </FrameLayout>
+
 </RelativeLayout>
-
-
-
