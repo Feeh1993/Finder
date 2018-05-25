@@ -8,6 +8,54 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:558106738163:android:16806363ce4e8593",
+        "android_client_info": {
+          "package_name": "com.example.administrador.finder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558106738163-u0r68qfvu3jjenhqrn3rm45ap0buvr70.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.administrador.finder",
+            "certificate_hash": "bcf36c1abddcc9ece2b7c8edede4fc2f8e09bd8b"
+          }
+        },
+        {
+          "client_id": "558106738163-1rnf1qf8g90vbvsqkgoqh5doca3ba9qf.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "558106738163-1rnf1qf8g90vbvsqkgoqh5doca3ba9qf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7Qo_DR5J_rRVHZuSPRqNHSaotBBOiq3M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558106738163-1rnf1qf8g90vbvsqkgoqh5doca3ba9qf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:558106738163:android:3979042b05415de6",
         "android_client_info": {
           "package_name": "com.example.fernandosilveira.promotions"
@@ -15,12 +63,72 @@
       },
       "oauth_client": [
         {
+          "client_id": "558106738163-sdk982g3afrc81celudl2ck3r3f3b403.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fernandosilveira.promotions",
+            "certificate_hash": "bcf36c1abddcc9ece2b7c8edede4fc2f8e09bd8b"
+          }
+        },
+        {
           "client_id": "558106738163-sk44dgt3ontoh1k970miq69j6huq0usq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.fernandosilveira.promotions",
             "certificate_hash": "61fe840f17768cd585caf946bbda37dbd934818d"
           }
+        },
+        {
+          "client_id": "558106738163-1rnf1qf8g90vbvsqkgoqh5doca3ba9qf.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "558106738163-1rnf1qf8g90vbvsqkgoqh5doca3ba9qf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7Qo_DR5J_rRVHZuSPRqNHSaotBBOiq3M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558106738163-1rnf1qf8g90vbvsqkgoqh5doca3ba9qf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558106738163:android:e0fd87325459289c",
+        "android_client_info": {
+          "package_name": "com.simon.shequdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558106738163-b2rd4n4lkbf5lnlu5atk6u7cl73rrf4i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.simon.shequdemo",
+            "certificate_hash": "bcf36c1abddcc9ece2b7c8edede4fc2f8e09bd8b"
+          }
+        },
+        {
+          "client_id": "558106738163-1rnf1qf8g90vbvsqkgoqh5doca3ba9qf.apps.googleusercontent.com",
+          "client_type": 3
         },
         {
           "client_id": "558106738163-1rnf1qf8g90vbvsqkgoqh5doca3ba9qf.apps.googleusercontent.com",

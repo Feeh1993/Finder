@@ -13,7 +13,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.text.TextUtils;
+import android.transition.Explode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -81,12 +83,19 @@ public class Login extends Activity
         });
         esqueceusenha.setOnClickListener(new View.OnClickListener()
         {
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v)
             {
-                Intent it = new Intent(Login.this, ResetPasswordActivity.class);
-                startActivity(it);
-                overridePendingTransition(R.anim.anim_fadein, R.anim.anim_fadeout);
+                Explode explode = new Explode();
+                explode.setDuration(500);
+
+                getWindow().setExitTransition(explode);
+                getWindow().setEnterTransition(explode);
+                ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(Login.this);
+                Intent i2 = new Intent(Login.this,ResetPasswordActivity.class);
+                startActivity(i2, oc2.toBundle());
             }
         });
         btnLogin.setOnClickListener(new View.OnClickListener()

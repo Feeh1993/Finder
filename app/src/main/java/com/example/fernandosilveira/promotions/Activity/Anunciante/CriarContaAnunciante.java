@@ -57,9 +57,9 @@ public class CriarContaAnunciante extends Activity
     private CategoriaProd categoriaProd;
     private ValidarCnpj validarCnpj;
     private TextWatcher cnpjMask;
-    private FloatingActionButton fab;
     private AVLoadingIndicatorView progressBar;
     private CardView cvAdd;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -192,61 +192,6 @@ public class CriarContaAnunciante extends Activity
             }
         });
 
-    }
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    private void ShowEnterAnimation() {
-        Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.fabtransition);
-        getWindow().setSharedElementEnterTransition(transition);
-
-        transition.addListener(new Transition.TransitionListener() {
-            @Override
-            public void onTransitionStart(Transition transition) {
-                cvAdd.setVisibility(View.GONE);
-            }
-
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onTransitionEnd(Transition transition) {
-                transition.removeListener(this);
-                animateRevealShow();
-            }
-
-            @Override
-            public void onTransitionCancel(Transition transition) {
-
-            }
-
-            @Override
-            public void onTransitionPause(Transition transition) {
-
-            }
-
-            @Override
-            public void onTransitionResume(Transition transition) {
-
-            }
-
-
-        });
-    }
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void animateRevealShow() {
-        Animator mAnimator = ViewAnimationUtils.createCircularReveal(cvAdd, cvAdd.getWidth()/2,0, fab.getWidth() / 2, cvAdd.getHeight());
-        mAnimator.setDuration(500);
-        mAnimator.setInterpolator(new AccelerateInterpolator());
-        mAnimator.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-            }
-
-            @Override
-            public void onAnimationStart(Animator animation) {
-                cvAdd.setVisibility(View.VISIBLE);
-                super.onAnimationStart(animation);
-            }
-        });
-        mAnimator.start();
     }
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void animateRevealClose() {

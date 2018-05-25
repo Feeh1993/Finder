@@ -16,13 +16,14 @@ import com.example.fernandosilveira.promotions.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.wang.avi.AVLoadingIndicatorView;
 
 public class ResetPasswordActivity extends Activity
 {
     private EditText edtEmailRecuperar;
     private Button btnRecuperarSenha;
     private FirebaseAuth autenticar = ConfiguracaoFirebase.getFirebaseAutenticacao();
-    private ProgressBar progressBar;
+    private AVLoadingIndicatorView progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -30,7 +31,7 @@ public class ResetPasswordActivity extends Activity
         setContentView(R.layout.activity_reset_password);
         edtEmailRecuperar = (EditText) findViewById(R.id.edtEmailRecuperar);
         btnRecuperarSenha = (Button) findViewById(R.id.btnRecuperarSenha);
-        progressBar = (ProgressBar) findViewById(R.id.progressBarReset);
+        progressBar = (AVLoadingIndicatorView) findViewById(R.id.progressBarReset);
         btnRecuperarSenha.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -42,7 +43,7 @@ public class ResetPasswordActivity extends Activity
                     Toast.makeText(getApplication(), "Digite seu e-mail cadastrado\n", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                progressBar.setVisibility(View.VISIBLE);
+                startAnim();
                 autenticar.sendPasswordResetEmail(email)
                         .addOnCompleteListener(new OnCompleteListener<Void>()
                         {
@@ -60,10 +61,23 @@ public class ResetPasswordActivity extends Activity
                                 {
                                     Toast.makeText(ResetPasswordActivity.this, "Falha ao enviar email de recuperação !\n", Toast.LENGTH_SHORT).show();
                                 }
-                                progressBar.setVisibility(View.GONE);
+                                stopAnim();
                             }
                         });
             }
         });
+    }
+    void startAnim()
+    {
+        progressBar.setVisibility(View.VISIBLE);
+        progressBar.show();
+        // or avi.smoothToShow();
+    }
+
+    void stopAnim()
+    {
+        progressBar.setVisibility(View.INVISIBLE);
+        progressBar.hide();
+        // or avi.smoothToHide();
     }
 }
