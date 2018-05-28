@@ -2,9 +2,7 @@ package com.example.fernandosilveira.promotions.Activity.Anunciante;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,22 +12,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.transition.Transition;
-import android.transition.TransitionInflater;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.fernandosilveira.promotions.Activity.Geral.EscolhaCadastro;
-import com.example.fernandosilveira.promotions.Activity.Geral.Login;
 import com.example.fernandosilveira.promotions.Activity.Geral.TermosUso;
-import com.example.fernandosilveira.promotions.Activity.Validacao.TelefoneValidar;
-import com.example.fernandosilveira.promotions.Activity.Validacao.ValidarCnpj;
+import com.example.fernandosilveira.promotions.Validacao.TelefoneValidar;
+import com.example.fernandosilveira.promotions.Validacao.ValidarCampos;
+import com.example.fernandosilveira.promotions.Validacao.ValidarCnpj;
 import com.example.fernandosilveira.promotions.Config.ConfiguracaoFirebase;
 import com.example.fernandosilveira.promotions.Maps.Local;
 import com.example.fernandosilveira.promotions.Model.Anunciante_Mod;
@@ -45,6 +39,7 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 
 public class CriarContaAnunciante extends Activity
 {
@@ -60,6 +55,7 @@ public class CriarContaAnunciante extends Activity
     private AVLoadingIndicatorView progressBar;
     private CardView cvAdd;
     private FloatingActionButton fab;
+    private TextView semcadastro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -73,6 +69,7 @@ public class CriarContaAnunciante extends Activity
         edtSenhaAnunc = (EditText) findViewById(R.id.edtSenhaCA);
       //  progressBar = (ProgressBar) findViewById(R.id.progressBarCA);
         TermosdeUso = (TextView) findViewById(R.id.txtTermosdeUso);
+        semcadastro = (TextView) findViewById(R.id.txtSemCadastro_CA);
         btnCriarContaAnunc = (Button) findViewById(R.id.btnCCAnunciante);
         cvAdd =(CardView) findViewById(R.id.cv_add);
         fab = (FloatingActionButton) findViewById(R.id.fabCA);
@@ -108,43 +105,77 @@ public class CriarContaAnunciante extends Activity
                 final String senha = edtSenhaAnunc.getText().toString();
                 final String cnpj = edtCnpj.getText().toString();
                 final String telefone = edtTelefone.getText().toString();
+                startAnim();
+
+                //valida os campos e cria um array list com os erros para eventuais tratamentos
+                ArrayList resultado = validacao(telefone,cnpj,email,senha,nome);
+                for (int i = 0; i < resultado.size(); i++)
+                {
+
+                  if (resultado.get(i).equals("Valida Login"))
+                  {
+                      if (TextUtils.isEmpty(nome))
+                      {
+                          stopAnim();
+                          edtNomeAnunc.setError("Digite seu Nome!");
+                      }
+                      else
+                      {
+                          anuncianteMod = new Anunciante_Mod();
+                          anuncianteMod.setNome(edtNomeAnunc.getText().toString());
+                          anuncianteMod.setEmail(edtEmailAnunc.getText().toString());
+                          anuncianteMod.setSenha(edtSenhaAnunc.getText().toString());
+                          anuncianteMod.setCnpj(edtCnpj.getText().toString());
+                          anuncianteMod.setTelefone(edtTelefone.getText().toString());
+                          cadastrarAnunciante();
+                      }
+                  }
+                  else if (resultado.get(i).equals("Email Erro"))
+                  {
+                      stopAnim();
+                     semcadastro.setText("O email precisa estar no formato user@user.com");
+                  }
+                  else if (resultado.get(i).equals("Cnpj Erro"))
+                  {
+                      stopAnim();
+                    semcadastro.setText("\n Verifique seu CNPJ e tente novamente!");
+                  }
+                  else if (resultado.get(i).equals("Senha Erro"))
+                  {
+                      stopAnim();
+                    semcadastro.setText("Sua senha deve: \n Ter entre 8 e 40 caracteres\n" +
+                            "Contenha pelo menos um dígito e um caracter especial de [@ # $%! . ].\n" +
+                            "Contenha pelo menos um caractere minúsculo e um caractere maiúsculo.\n");
+                  }
+                  else if (resultado.get(i).equals("Telefone Erro"))
+                  {
+                      stopAnim();
+                      semcadastro.setText("\n Seu Telefone esta em formato incorreto!");
+                  }
+                }
+                if (TextUtils.isEmpty(cnpj) && TextUtils.isEmpty(email) && TextUtils.isEmpty(telefone) && TextUtils.isEmpty(senha))
+                {
+                    semcadastro.setText("Preencha todos os campos ante de clicar em Criar Conta!");
+                }else
                 if (TextUtils.isEmpty(email))
                 {
-                    Toast.makeText(getApplicationContext(), "Digite seu Email!", Toast.LENGTH_SHORT).show();
-                    return;
+                    stopAnim();
+                   edtEmailAnunc.setError("Digite seu email!");
                 }
                 else if (TextUtils.isEmpty(telefone))
                 {
-                    Toast.makeText(getApplicationContext(), "Digite seu Telefone!", Toast.LENGTH_SHORT).show();
-                    return;
+                    stopAnim();
+                   edtTelefone.setError("Digite seu telefone");
                 }
                 else if (TextUtils.isEmpty(senha))
                 {
-                    Toast.makeText(getApplicationContext(), "Digite sua senha!", Toast.LENGTH_SHORT).show();
-                    return;
+                    stopAnim();
+                    edtSenhaAnunc.setError("Digite sua senha!");
                 }
                 else if (TextUtils.isEmpty(cnpj))
                 {
-                    Toast.makeText(getApplicationContext(), "Digite seu Cnpj!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                else if (TextUtils.isEmpty(nome))
-                {
-                    Toast.makeText(getApplicationContext(), "Digite seu Nome!", Toast.LENGTH_SHORT).show();
-                    return;
-                }else
-                {
-                 //   progressBar.setVisibility(View.VISIBLE);
-                    startAnim();
-                    anuncianteMod = new Anunciante_Mod();
-                    anuncianteMod.setNome(edtNomeAnunc.getText().toString());
-                    anuncianteMod.setEmail(edtEmailAnunc.getText().toString());
-                    anuncianteMod.setSenha(edtSenhaAnunc.getText().toString());
-                    anuncianteMod.setCnpj(edtCnpj.getText().toString());
-                    anuncianteMod.setTelefone(edtTelefone.getText().toString());
-                    cadastrarAnunciante();
-              //      progressBar.setVisibility(View.INVISIBLE);
                     stopAnim();
+                    edtCnpj.setError("Digite seu CNPJ!");
                 }
             }
         });
@@ -231,6 +262,40 @@ public class CriarContaAnunciante extends Activity
         progressBar.setVisibility(View.INVISIBLE);
         progressBar.hide();
         // or avi.smoothToHide();
+    }
+    public ArrayList validacao(String telefone,String cnpj,String email , String senha, String nome)
+    {
+        ArrayList resultado = new ArrayList();
+        ValidarCampos validarCampos = new ValidarCampos();
+        String resemail = validarCampos.validarEmail(email);
+        String ressenha = validarCampos.validarSenha(senha);
+        String restelefone = validarCampos.validarTelefone(telefone);
+        String rescnpj = validarCampos.validarCNPJ(cnpj);
+        if (resemail == "OK" && ressenha == "OK" && rescnpj == "OK" && restelefone == "OK")
+        {
+            resultado.add("Valida Login");
+        }
+        else if (resemail == "ERRO")
+        {
+            resultado.add("Email Erro");
+        } else resultado.add("Email OK");
+
+        if (rescnpj == "ERRO")
+        {
+            resultado.add("Cnpj Erro");
+        }else resultado.add("Cnpj OK");
+
+        if (ressenha == "ERRO")
+        {
+            resultado.add("Senha Erro");
+        }else resultado.add("Senha OK");
+
+        if (restelefone == "ERRO")
+        {
+            resultado.add("Telefone Erro");
+        }else resultado.add("Telefone OK");
+        return resultado;
+
     }
 
 }

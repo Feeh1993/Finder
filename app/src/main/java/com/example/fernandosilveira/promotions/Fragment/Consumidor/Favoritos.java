@@ -18,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fernandosilveira.promotions.Activity.Consumidor.Anuncio_Notificacao;
-import com.example.fernandosilveira.promotions.Activity.Validacao.ValidarData;
+import com.example.fernandosilveira.promotions.Validacao.ValidarData;
 import com.example.fernandosilveira.promotions.Adapter.Consumidor.ProdutoAdapter;
 import com.example.fernandosilveira.promotions.Config.ConexaoTeste;
 import com.example.fernandosilveira.promotions.Config.ConfiguracaoFirebase;

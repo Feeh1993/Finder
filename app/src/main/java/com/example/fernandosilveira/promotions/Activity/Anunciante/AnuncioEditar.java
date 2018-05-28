@@ -22,7 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.fernandosilveira.promotions.Activity.Validacao.ValidarData;
+import com.example.fernandosilveira.promotions.Validacao.ValidarData;
 import com.example.fernandosilveira.promotions.Adapter.Anunciante.TabAdapterAnunc;
 import com.example.fernandosilveira.promotions.Config.ConfiguracaoFirebase;
 import com.example.fernandosilveira.promotions.Model.Produto;

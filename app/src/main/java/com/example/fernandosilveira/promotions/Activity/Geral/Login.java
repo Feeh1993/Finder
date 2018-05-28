@@ -16,6 +16,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.text.TextUtils;
 import android.transition.Explode;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,11 +29,15 @@ import com.example.fernandosilveira.promotions.Config.ConfiguracaoFirebase;
 import com.example.fernandosilveira.promotions.Helper.PermissionsUtils;
 import com.example.fernandosilveira.promotions.Model.Consumidor;
 import com.example.fernandosilveira.promotions.R;
+import com.example.fernandosilveira.promotions.Validacao.ValidarCampos;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.wang.avi.AVLoadingIndicatorView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Login extends Activity
 {
@@ -59,7 +64,7 @@ public class Login extends Activity
         edtEmailLogin = (EditText) findViewById(R.id.edtEmailLogin);
         edtSenhaLogin = (EditText) findViewById(R.id.edtSenhaLogin);
         esqueceusenha = (TextView) findViewById(R.id.txtEsqueceuSenha);
-        semcadastro = (TextView) findViewById(R.id.txtSemCadastro);
+        semcadastro = (TextView) findViewById(R.id.txtSemCadastro_Login);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         fab = (FloatingActionButton) findViewById(R.id.fab);
         Termosuso = (TextView) findViewById(R.id.txtTermosdeUso);
@@ -105,24 +110,33 @@ public class Login extends Activity
             {
                 String email = edtEmailLogin.getText().toString();
                 final String senha = edtSenhaLogin.getText().toString();
-                if (TextUtils.isEmpty(email))
-                {
-                    //Toast.makeText(getApplicationContext(), "Digite seu Email!", Toast.LENGTH_SHORT).show();
-                    edtEmailLogin.setError("Digite seu Email!");
-                    return;
-                }
-                if (TextUtils.isEmpty(senha))
-                {
-                    //Toast.makeText(getApplicationContext(), "Digite sua Senha!", Toast.LENGTH_SHORT).show();
-                    edtSenhaLogin.setError("Digite sua Senha!");
-                    return;
-                }
-//                progressBar.setVisibility(View.VISIBLE);
                 startAnim();
-                consumidor = new Consumidor();
-                consumidor.setEmail( edtEmailLogin.getText().toString() );
-                consumidor.setSenha( edtSenhaLogin.getText().toString() );
-                validarLogin();
+                ArrayList resval = validacao(email,senha);
+                for (int i = 0; i < resval.size(); i++)
+                {
+                    if (resval.get(i).equals("Email Vazio"))
+                    {
+                        stopAnim();
+                        edtEmailLogin.setError("Digite seu Email!");
+                    }
+                    else if (resval.get(i).equals("Senha Vazia"))
+                    {
+                        stopAnim();
+                        edtSenhaLogin.setError("Digite sua Senha!");
+                    }
+                    else if (resval.get(i).equals("Valida Login"))
+                    {
+                        consumidor = new Consumidor();
+                        consumidor.setEmail( email );
+                        consumidor.setSenha( senha );
+                        validarLogin();
+                    }
+                    else if (resval.get(i).equals("Email Erro"))
+                    {
+                        stopAnim();
+                        semcadastro.setText("Email com formato incorreto!");
+                    }
+                }
             }
         });
 
@@ -174,15 +188,12 @@ public class Login extends Activity
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if( task.isSuccessful() )
                 {
-                    abrirTelaPrincipal();
-                    // salvar email banco local
-//                    LoginDAO dao = new LoginDAO(getBaseContext());
-  //                  dao.salvarEmail(0,consumidor.getEmail());
                     Toast.makeText(Login.this, "Login Efetuado com Sucesso!", Toast.LENGTH_LONG ).show();
+                    abrirTelaPrincipal();
                 }else
                     {
                        // Toast.makeText(Login.this, "Erro ao fazer login,verifique seu email e senha e tente novamente", Toast.LENGTH_LONG ).show();
-                        semcadastro.setText("Erro ao fazer login,verifique seu email e senha !");
+                        semcadastro.setText("Não Possui Cadastro? \n Clique em + e crie uma conta Finder!");
   //                      progressBar.setVisibility(View.GONE);
                         stopAnim();
                     }
@@ -230,6 +241,33 @@ public class Login extends Activity
         progressBar.setVisibility(View.INVISIBLE);
         progressBar.hide();
         // or avi.smoothToHide();
+    }
+    public ArrayList validacao(String email , String senha)
+    {
+        ArrayList resultado = new ArrayList();
+        if (TextUtils.isEmpty(email))
+        {
+            resultado.add("Email Vazio");
+
+        }
+        if (TextUtils.isEmpty(senha))
+        {
+            resultado.add("Senha Vazia");
+        }
+        ValidarCampos validarCampos = new ValidarCampos();
+        String resemail = validarCampos.validarEmail(email);
+       // String ressenha = validarCampos.validarSenha(senha);
+        if (resemail == "OK" )
+        {
+            resultado.add("Valida Login");
+        }
+        else if (resemail == "ERRO")
+        {
+            resultado.add("Email Erro");
+
+        }
+        return resultado;
+
     }
 
 }

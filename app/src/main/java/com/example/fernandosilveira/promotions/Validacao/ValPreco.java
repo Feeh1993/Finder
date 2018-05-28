@@ -1,4 +1,4 @@
-package com.example.fernandosilveira.promotions.Activity.Validacao;
+package com.example.fernandosilveira.promotions.Validacao;
 
 /**
  * Created by Fernando Silveira on 13/09/2017.

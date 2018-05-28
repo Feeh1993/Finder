@@ -199,18 +199,27 @@
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/txtSemCadastro_CA"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/tabBackground"
+                    android:textSize="8dp" />
+
                 <Button
                     android:id="@+id/btnCCAnunciante"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="@dimen/padd_10"
                     android:background="@drawable/bordas_laranja"
                     android:stateListAnimator="@drawable/state_list_animator_z"
                     android:text="Criar Conta"
                     android:textColor="@color/tabBackground"></Button>
-
-
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
@@ -229,13 +238,14 @@
                 android:layout_gravity="center_horizontal|top"
                 android:src="@drawable/plus_x"
                 app:fabSize="normal" />
+
         <com.wang.avi.AVLoadingIndicatorView
             android:id="@+id/avi"
             style="@style/AVLoadingIndicatorView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="2dp"
             android:visibility="invisible"
             app:indicatorColor="@color/tabBackground"
             app:indicatorName="BallPulseIndicator" />

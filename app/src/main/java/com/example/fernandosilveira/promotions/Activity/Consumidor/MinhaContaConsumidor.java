@@ -17,7 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.fernandosilveira.promotions.Activity.Geral.Login;
-import com.example.fernandosilveira.promotions.Activity.Validacao.TelefoneValidar;
+import com.example.fernandosilveira.promotions.Validacao.TelefoneValidar;
 import com.example.fernandosilveira.promotions.Config.ConfiguracaoFirebase;
 import com.example.fernandosilveira.promotions.R;
 import com.example.fernandosilveira.promotions.Service.Geofence.ServicoLocalConsumidor;

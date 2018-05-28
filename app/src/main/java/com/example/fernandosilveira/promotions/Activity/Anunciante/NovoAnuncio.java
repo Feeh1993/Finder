@@ -16,7 +16,7 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.fernandosilveira.promotions.Activity.Validacao.ValidarPreco;
+import com.example.fernandosilveira.promotions.Validacao.ValidarPreco;
 import com.example.fernandosilveira.promotions.Adapter.Anunciante.TabAdapterAnunc;
 import com.example.fernandosilveira.promotions.Config.ConfiguracaoFirebase;
 import com.example.fernandosilveira.promotions.Helper.Base64Custom;

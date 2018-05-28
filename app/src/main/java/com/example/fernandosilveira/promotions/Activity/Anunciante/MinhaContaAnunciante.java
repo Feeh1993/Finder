@@ -11,7 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.fernandosilveira.promotions.Activity.Validacao.TelefoneValidar;
+import com.example.fernandosilveira.promotions.Validacao.TelefoneValidar;
 import com.example.fernandosilveira.promotions.Config.ConfiguracaoFirebase;
 import com.example.fernandosilveira.promotions.R;
 import com.google.android.gms.tasks.OnCompleteListener;

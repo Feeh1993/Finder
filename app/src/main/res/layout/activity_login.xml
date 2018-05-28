@@ -107,9 +107,12 @@ tools:context=".Activity.Geral.Login">
             android:paddingStart="20dp">
 
             <TextView
-                android:id="@+id/txtSemCadastro"
+                android:id="@+id/txtSemCadastro_Login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/tabBackground"
+                android:textSize="10sp" />
 
             <com.wang.avi.AVLoadingIndicatorView
                 android:id="@+id/avi"

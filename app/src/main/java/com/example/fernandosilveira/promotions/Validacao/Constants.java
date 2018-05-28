@@ -1,4 +1,4 @@
-package com.example.fernandosilveira.promotions.Activity.Validacao;
+package com.example.fernandosilveira.promotions.Validacao;
 
 import java.util.Set;
 

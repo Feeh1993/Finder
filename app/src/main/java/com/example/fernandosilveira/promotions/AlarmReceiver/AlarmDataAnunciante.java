@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.example.fernandosilveira.promotions.Activity.Validacao.ValidarData;
+import com.example.fernandosilveira.promotions.Validacao.ValidarData;
 import com.example.fernandosilveira.promotions.Config.ConfiguracaoFirebase;
 import com.example.fernandosilveira.promotions.Model.Produto;
 import com.google.firebase.auth.FirebaseAuth;

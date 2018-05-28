@@ -1,4 +1,4 @@
-package com.example.fernandosilveira.promotions.Activity.Validacao;
+package com.example.fernandosilveira.promotions.Validacao;
 
 import android.text.Editable;
 import android.text.TextWatcher;
